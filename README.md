@@ -2,7 +2,7 @@
 
 ## Setup
 
-It is recommended to run the project on a python virtual environment.
+It is recommended to run the project in a python virtual environment.
 
 ```
 $ virtualenv venv
@@ -30,4 +30,4 @@ Change directory to *drs2viz*
 $ python app.py
 ```
 
-Starts a flask server running the representations on http://localhost:5000/brat2viz
+Starts a flask server running the representations on http://localhost:5055/brat2viz
