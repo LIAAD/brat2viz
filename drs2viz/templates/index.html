@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DRS2VIZ</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='utils.js') }}"></script>
+    </head>
+
+    <body>
+
+        <form class="form-inline" id="drs-form" method="POST" action="{{ url_for('brat2viz') }}">
+            <div class="form-group">
+                <div class="input-group">
+                    <select name="select_drs">
+                        {% for drs in drs_files %}
+                        <option value="{{drs}}" {% if drs == selected_drs %} selected="selected" {% endif %}>
+                            {{drs}}
+                        </option>"
+                        {% endfor %}
+                    </select>
+
+                    <div class="vis_type">
+                        <input type="radio" id="news_text" name="select_vis" value="news_text" {% if selected_vis == "news_text" %} checked="checked" {% endif %}> news text <br>
+                        <input type="radio" id="ann_text" name="select_vis" value="ann_text" {% if selected_vis == "ann_text" %} checked="checked" {% endif %}> ann text <br>
+                        <input type="radio" id="drs_text" name="select_vis" value="drs_text" {% if selected_vis == "drs_text" %} checked="checked" {% endif %}> drs text <br>
+                        <input type="radio" id="msc" name="select_vis" value="msc" {% if selected_vis == "msc" %} checked="checked" {% endif %}> msc <br>
+                        <input type="radio" id="graph" name="select_vis" value="graph" {% if selected_vis == "graph" %} checked="checked" {% endif %}> graph <br>
+                    </div>
+                </div>
+            </div>
+        </form>
+        
+        {% if selected_vis == 'msc' %}
+            {% include 'mscgen.html' %}
+        {% elif selected_vis == 'graph' %}
+            {% include 'graph.html' %}
+        {% else %}
+            {% include 'display_text.html' %}
+        {% endif %}
+
+    </body>
+</html>
