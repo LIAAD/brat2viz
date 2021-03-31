@@ -31,3 +31,14 @@ $ python app.py
 ```
 
 Starts a flask server running the representations on http://localhost:5055/brat2viz
+
+### Cite our paper
+
+If you use or extend Brat2Viz, **please** cite our paper:
+
+Evelin Amorim, Alexandre Ribeiro, Inês Cantante, Alípio Jorge, Brenda Santana, Sérgio Nunes, Purificação Silvano, António Leal and Ricardo Campos
+Brat2Viz: a Tool and Pipeline for Visualizing Narratives from Annotated Texts
+Text2Story@ECIR2021, CEUR. 
+
+
+Link to the workshop: https://text2story21.inesctec.pt/
